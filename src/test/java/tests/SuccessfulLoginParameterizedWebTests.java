@@ -1,6 +1,8 @@
 package tests;
 
+import com.codeborne.selenide.Selenide;
 import data.Users;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
@@ -12,6 +14,11 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
 
     LoginPage loginPage = new LoginPage();
     ProfilePage profilePage = new ProfilePage();
+
+    @AfterEach
+    void afterEach() {
+        Selenide.closeWebDriver();
+    }
 
     @DisplayName("Тесты на авторизацию с использованием @CsvSource")
     @CsvSource(value = {
