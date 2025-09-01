@@ -1,8 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Selenide;
 import data.Users;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
