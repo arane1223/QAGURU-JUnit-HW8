@@ -21,7 +21,8 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
     void successfulLoginOnDemoqaWithCsvSourceTest(String userName, String password) {
         loginPage
                 .openPage()
-                .deleteAdd().setUserNameAndPassword(userName, password);
+                .deleteAdd()
+                .setUserNameAndPassword(userName, password);
 
         profilePage
                 .chekTableVisible()
@@ -35,7 +36,8 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
     void successfulLoginOnDemoqaWithCsvFileSourceTest(String userName, String password) {
         loginPage
                 .openPage()
-                .deleteAdd().setUserNameAndPassword(userName, password);
+                .deleteAdd()
+                .setUserNameAndPassword(userName, password);
 
         profilePage
                 .chekTableVisible()
@@ -49,7 +51,8 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
     void successfulLoginOnDemoqaWithEnumTest(Users users) {
         loginPage
                 .openPage()
-                .deleteAdd().setUserNameAndPassword(users.userName, users.password);
+                .deleteAdd()
+                .setUserNameAndPassword(users.userName, users.password);
 
         profilePage
                 .chekTableVisible()
