@@ -15,11 +15,6 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
     LoginPage loginPage = new LoginPage();
     ProfilePage profilePage = new ProfilePage();
 
-    @AfterEach
-    void afterEach() {
-        Selenide.closeWebDriver();
-    }
-
     @DisplayName("Тесты на авторизацию с использованием @CsvSource")
     @CsvSource(value = {
             "AlexTerrible, Qwer!1234",
@@ -54,7 +49,7 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
 
     @DisplayName("Тесты на авторизацию с использованием @EnumSource")
     @EnumSource(Users.class)
-    @ParameterizedTest(name = "Залогиниться на DEMOQA по логину {0} и паролю {1}")
+    @ParameterizedTest(name = "Залогиниться на DEMOQA с данными юзера {0}")
     void successfulLoginOnDemoqaWithEnumTest(Users users) {
         loginPage
                 .openPage()
