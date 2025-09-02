@@ -2,6 +2,7 @@ package tests;
 
 import data.Users;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 import pages.LoginPage;
@@ -10,9 +11,11 @@ import pages.ProfilePage;
 @DisplayName("Тесты на успешную авторизацию на DEMOQA")
 public class SuccessfulLoginParameterizedWebTests extends TastBase {
 
+
     LoginPage loginPage = new LoginPage();
     ProfilePage profilePage = new ProfilePage();
 
+    @Tag("SMOKE")
     @DisplayName("Тесты на авторизацию с использованием @CsvSource")
     @CsvSource(value = {
             "AlexTerrible, Qwer!1234",
@@ -45,6 +48,7 @@ public class SuccessfulLoginParameterizedWebTests extends TastBase {
                 .logOut();
     }
 
+    @Tag("SMOKE")
     @DisplayName("Тесты на авторизацию с использованием @EnumSource")
     @EnumSource(Users.class)
     @ParameterizedTest(name = "Залогиниться на DEMOQA с данными юзера {0}")

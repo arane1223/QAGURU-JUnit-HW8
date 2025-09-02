@@ -18,8 +18,14 @@ public class SuccessfulFillingTextBoxForm extends TastBase {
 
     static Stream<Arguments>  fillingFormWithMethodSourceParametrizeTest(){
         return Stream.of(
-                Arguments.of("Alex", "alex@egorov.com", List.of("Some street 1", "Another street 1")),
-                Arguments.of("Bob", "Bob@gmail.com", List.of("London", "Baker street 231"))
+                Arguments.of(
+                        "Alex",
+                        "alex@egorov.com",
+                        List.of("Some street 1", "Another street 1")),
+                Arguments.of(
+                        "Bob",
+                        "Bob@gmail.com",
+                        List.of("London", "Baker street 231"))
         );
     }
 
